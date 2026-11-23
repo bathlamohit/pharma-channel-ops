@@ -1,0 +1,9 @@
+PASS  alloc unfilled per CFA adds to national  
+PASS  digest stock-outs = allocation  
+PASS  digest moves = allocation  
+PASS  digest consent batches = expiry  
+PASS  digest at-risk batches = expiry  
+PASS  digest supply to-do = 5 earliest tasks  
+PASS  all 360 pending claims checked ({'clean': 247, 'to_person': 72, 'reject': 41})  
+
+210 passed, 0 failed (210 checks)

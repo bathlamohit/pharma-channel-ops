@@ -1,0 +1,929 @@
+{
+ "figures": [
+  {
+   "figure": "alloc.unfilled_h1_cr",
+   "independent": 18.29850342,
+   "app": 18.3,
+   "verified": 18.3,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "alloc.unfilled_outside_cr",
+   "independent": 3.5377017299999998,
+   "app": 3.54,
+   "verified": 3.54,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "claims.credit_days_mean",
+   "independent": 45.17874513618677,
+   "app": 45.0,
+   "verified": 45,
+   "tolerance": 0.5,
+   "result": "PASS"
+  },
+  {
+   "figure": "claims.credit_days_median",
+   "independent": 42.0,
+   "app": 42.0,
+   "verified": 42,
+   "tolerance": 0.5,
+   "result": "PASS"
+  },
+  {
+   "figure": "claims.pending_count",
+   "independent": 360,
+   "app": 360,
+   "verified": 360,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "claims.pending_list_len",
+   "independent": null,
+   "app": 360,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "claims.pending_over_30",
+   "independent": 129,
+   "app": 129,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "claims.pending_value_L",
+   "independent": 95.947924,
+   "app": 95.9,
+   "verified": 95.9,
+   "tolerance": 0.05,
+   "result": "PASS"
+  },
+  {
+   "figure": "claims.q1_fy27_cr",
+   "independent": 1.41417794,
+   "app": null,
+   "verified": 1.415,
+   "tolerance": 0.002,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.CF-E01",
+   "independent": 3.310175836723768,
+   "app": 3.31,
+   "verified": 3.31,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.CF-N01",
+   "independent": 1.2542218023832774,
+   "app": 1.25,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.CF-N02",
+   "independent": 0.321165725091797,
+   "app": 0.32,
+   "verified": 0.32,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.CF-S01",
+   "independent": 1.803926337475037,
+   "app": 1.8,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.CF-S02",
+   "independent": 2.232533328766754,
+   "app": 2.23,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.CF-W01",
+   "independent": 1.8538693839326115,
+   "app": 1.85,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.kolkata_above_3m_cr",
+   "independent": 1.6633584400000003,
+   "app": 1.66,
+   "verified": 1.66,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.lucknow_zero_skus",
+   "independent": 23,
+   "app": null,
+   "verified": 23,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.national",
+   "independent": 1.7376807776431547,
+   "app": 1.74,
+   "verified": 1.74,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "cover.stock_outs_selling",
+   "independent": 50,
+   "app": null,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "expiry.block_batches",
+   "independent": 0,
+   "app": 0,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "expiry.kolkata_under60_cr",
+   "independent": 1.1791711900000001,
+   "app": 1.1791711900000001,
+   "verified": 1.18,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "expiry.short_dated_billing_cr",
+   "independent": 6.262462709999999,
+   "app": 6.262,
+   "verified": 6.3,
+   "tolerance": 0.1,
+   "result": "PASS"
+  },
+  {
+   "figure": "expiry.under60_batches",
+   "independent": 65,
+   "app": 65,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "fefo.kolkata_fy27q2_pct",
+   "independent": 70.70027007829624,
+   "app": 70.7,
+   "verified": 70.7,
+   "tolerance": 0.05,
+   "result": "PASS"
+  },
+  {
+   "figure": "scheme.excess_cr",
+   "independent": 4.760915208969752,
+   "app": 4.760915209,
+   "verified": 4.76,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "scheme.latest_quarter_pct",
+   "independent": 2.8171327392085237,
+   "app": 2.82,
+   "verified": 2.82,
+   "tolerance": 0.005,
+   "result": "PASS"
+  },
+  {
+   "figure": "scheme.over_cap_cr",
+   "independent": 3.9540105499000004,
+   "app": 3.95401055,
+   "verified": 3.954,
+   "tolerance": 0.0005,
+   "result": "PASS"
+  },
+  {
+   "figure": "scheme.quarters_over",
+   "independent": 7,
+   "app": 7,
+   "verified": null,
+   "tolerance": 0.006,
+   "result": "PASS"
+  },
+  {
+   "figure": "scheme.rate_other_pct",
+   "independent": 0.34812042723986725,
+   "app": 0.35000000000000003,
+   "verified": 0.35,
+   "tolerance": 0.005,
+   "result": "PASS"
+  },
+  {
+   "figure": "scheme.rate_scheme_pct",
+   "independent": 4.248799074440318,
+   "app": 4.25,
+   "verified": 4.25,
+   "tolerance": 0.005,
+   "result": "PASS"
+  }
+ ],
+ "claim_rules": {
+  "as_written": {
+   "credited_l4q": [
+    181,
+    2188885.4
+   ],
+   "pending": [
+    38,
+    724971.5
+   ]
+  },
+  "invoice_refs_normalised": {
+   "credited_l4q": [
+    185,
+    2211588.4
+   ],
+   "pending": [
+    41,
+    736783.1
+   ]
+  },
+  "credited_twice_30m": [
+   61,
+   1120030.7
+  ]
+ },
+ "stock_forecast": {
+  "invoices": [
+   {
+    "source": "invoices",
+    "origin": "2026-03-31",
+    "target": "2026-04-30",
+    "horizon_months": 1,
+    "batches": 267,
+    "wape_model": 0.6993,
+    "wape_no_sales": 0.6018,
+    "wape_proportional": 0.6758,
+    "bias_model": -0.6235
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-03-31",
+    "target": "2026-05-31",
+    "horizon_months": 2,
+    "batches": 267,
+    "wape_model": 0.9256,
+    "wape_no_sales": 2.6927,
+    "wape_proportional": 0.9342,
+    "bias_model": -0.8468
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-03-31",
+    "target": "2026-06-30",
+    "horizon_months": 3,
+    "batches": 267,
+    "wape_model": 1.0204,
+    "wape_no_sales": 6.9301,
+    "wape_proportional": 1.0,
+    "bias_model": -0.8218
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-04-30",
+    "target": "2026-05-31",
+    "horizon_months": 1,
+    "batches": 284,
+    "wape_model": 0.8239,
+    "wape_no_sales": 1.0251,
+    "wape_proportional": 0.8401,
+    "bias_model": -0.6825
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-04-30",
+    "target": "2026-06-30",
+    "horizon_months": 2,
+    "batches": 284,
+    "wape_model": 0.9159,
+    "wape_no_sales": 3.5368,
+    "wape_proportional": 0.9614,
+    "bias_model": -0.8275
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-04-30",
+    "target": "2026-07-31",
+    "horizon_months": 3,
+    "batches": 284,
+    "wape_model": 0.9671,
+    "wape_no_sales": 5.3937,
+    "wape_proportional": 1.0,
+    "bias_model": -0.8112
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-05-31",
+    "target": "2026-06-30",
+    "horizon_months": 1,
+    "batches": 310,
+    "wape_model": 0.9034,
+    "wape_no_sales": 1.418,
+    "wape_proportional": 0.8867,
+    "bias_model": -0.5001
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-05-31",
+    "target": "2026-07-31",
+    "horizon_months": 2,
+    "batches": 310,
+    "wape_model": 1.0173,
+    "wape_no_sales": 3.7498,
+    "wape_proportional": 0.9988,
+    "bias_model": -0.7942
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-05-31",
+    "target": "2026-08-31",
+    "horizon_months": 3,
+    "batches": 310,
+    "wape_model": 1.0438,
+    "wape_no_sales": 6.6059,
+    "wape_proportional": 1.0,
+    "bias_model": -0.665
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-06-30",
+    "target": "2026-07-31",
+    "horizon_months": 1,
+    "batches": 293,
+    "wape_model": 0.61,
+    "wape_no_sales": 0.7871,
+    "wape_proportional": 0.5672,
+    "bias_model": -0.4926
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-06-30",
+    "target": "2026-08-31",
+    "horizon_months": 2,
+    "batches": 293,
+    "wape_model": 0.8407,
+    "wape_no_sales": 2.5713,
+    "wape_proportional": 0.8596,
+    "bias_model": -0.7417
+   },
+   {
+    "source": "invoices",
+    "origin": "2026-06-30",
+    "target": "2026-09-30",
+    "horizon_months": 3,
+    "batches": 293,
+    "wape_model": 0.9227,
+    "wape_no_sales": 5.5267,
+    "wape_proportional": 0.9996,
+    "bias_model": -0.7011
+   }
+  ],
+  "report": [
+   {
+    "source": "report",
+    "origin": "2026-03-31",
+    "target": "2026-04-30",
+    "horizon_months": 1,
+    "batches": 267,
+    "wape_model": 0.4342,
+    "wape_no_sales": 0.6018,
+    "wape_proportional": 0.4449,
+    "bias_model": -0.1572
+   },
+   {
+    "source": "report",
+    "origin": "2026-03-31",
+    "target": "2026-05-31",
+    "horizon_months": 2,
+    "batches": 267,
+    "wape_model": 0.9585,
+    "wape_no_sales": 2.6927,
+    "wape_proportional": 0.9539,
+    "bias_model": -0.0553
+   },
+   {
+    "source": "report",
+    "origin": "2026-03-31",
+    "target": "2026-06-30",
+    "horizon_months": 3,
+    "batches": 267,
+    "wape_model": 0.984,
+    "wape_no_sales": 6.9301,
+    "wape_proportional": 0.9036,
+    "bias_model": -0.2304
+   },
+   {
+    "source": "report",
+    "origin": "2026-04-30",
+    "target": "2026-05-31",
+    "horizon_months": 1,
+    "batches": 284,
+    "wape_model": 0.7506,
+    "wape_no_sales": 1.0251,
+    "wape_proportional": 0.7893,
+    "bias_model": -0.1661
+   },
+   {
+    "source": "report",
+    "origin": "2026-04-30",
+    "target": "2026-06-30",
+    "horizon_months": 2,
+    "batches": 284,
+    "wape_model": 1.1314,
+    "wape_no_sales": 3.5368,
+    "wape_proportional": 1.0594,
+    "bias_model": 0.207
+   },
+   {
+    "source": "report",
+    "origin": "2026-04-30",
+    "target": "2026-07-31",
+    "horizon_months": 3,
+    "batches": 284,
+    "wape_model": 1.0351,
+    "wape_no_sales": 5.3937,
+    "wape_proportional": 0.8744,
+    "bias_model": 0.0556
+   },
+   {
+    "source": "report",
+    "origin": "2026-05-31",
+    "target": "2026-06-30",
+    "horizon_months": 1,
+    "batches": 310,
+    "wape_model": 0.9279,
+    "wape_no_sales": 1.418,
+    "wape_proportional": 0.9262,
+    "bias_model": 0.2024
+   },
+   {
+    "source": "report",
+    "origin": "2026-05-31",
+    "target": "2026-07-31",
+    "horizon_months": 2,
+    "batches": 310,
+    "wape_model": 1.0212,
+    "wape_no_sales": 3.7498,
+    "wape_proportional": 0.837,
+    "bias_model": 0.0144
+   },
+   {
+    "source": "report",
+    "origin": "2026-05-31",
+    "target": "2026-08-31",
+    "horizon_months": 3,
+    "batches": 310,
+    "wape_model": 0.9787,
+    "wape_no_sales": 6.6059,
+    "wape_proportional": 0.6582,
+    "bias_model": -0.106
+   },
+   {
+    "source": "report",
+    "origin": "2026-06-30",
+    "target": "2026-07-31",
+    "horizon_months": 1,
+    "batches": 293,
+    "wape_model": 0.5349,
+    "wape_no_sales": 0.7871,
+    "wape_proportional": 0.5294,
+    "bias_model": -0.005
+   },
+   {
+    "source": "report",
+    "origin": "2026-06-30",
+    "target": "2026-08-31",
+    "horizon_months": 2,
+    "batches": 293,
+    "wape_model": 1.0357,
+    "wape_no_sales": 2.5713,
+    "wape_proportional": 0.9187,
+    "bias_model": 0.0994
+   },
+   {
+    "source": "report",
+    "origin": "2026-06-30",
+    "target": "2026-09-30",
+    "horizon_months": 3,
+    "batches": 293,
+    "wape_model": 1.0386,
+    "wape_no_sales": 5.5267,
+    "wape_proportional": 0.8306,
+    "bias_model": -0.0197
+   }
+  ]
+ },
+ "at_risk_flag": {
+  "invoices": {
+   "by_origin": [
+    {
+     "origin": "2026-03-31",
+     "evaluable_batches": 160,
+     "tp": 7,
+     "fp": 1,
+     "fn": 42,
+     "tn": 110,
+     "precision": 0.875,
+     "recall": 0.143
+    },
+    {
+     "origin": "2026-04-30",
+     "evaluable_batches": 145,
+     "tp": 14,
+     "fp": 4,
+     "fn": 33,
+     "tn": 94,
+     "precision": 0.778,
+     "recall": 0.298
+    },
+    {
+     "origin": "2026-05-31",
+     "evaluable_batches": 108,
+     "tp": 4,
+     "fp": 1,
+     "fn": 36,
+     "tn": 67,
+     "precision": 0.8,
+     "recall": 0.1
+    },
+    {
+     "origin": "2026-06-30",
+     "evaluable_batches": 76,
+     "tp": 11,
+     "fp": 1,
+     "fn": 31,
+     "tn": 33,
+     "precision": 0.917,
+     "recall": 0.262
+    }
+   ],
+   "flagged": 43,
+   "precision": 0.837,
+   "recall": 0.202
+  },
+  "report": {
+   "by_origin": [
+    {
+     "origin": "2026-03-31",
+     "evaluable_batches": 160,
+     "tp": 21,
+     "fp": 28,
+     "fn": 28,
+     "tn": 83,
+     "precision": 0.429,
+     "recall": 0.429
+    },
+    {
+     "origin": "2026-04-30",
+     "evaluable_batches": 145,
+     "tp": 26,
+     "fp": 26,
+     "fn": 21,
+     "tn": 72,
+     "precision": 0.5,
+     "recall": 0.553
+    },
+    {
+     "origin": "2026-05-31",
+     "evaluable_batches": 108,
+     "tp": 23,
+     "fp": 8,
+     "fn": 17,
+     "tn": 60,
+     "precision": 0.742,
+     "recall": 0.575
+    },
+    {
+     "origin": "2026-06-30",
+     "evaluable_batches": 76,
+     "tp": 27,
+     "fp": 16,
+     "fn": 15,
+     "tn": 18,
+     "precision": 0.628,
+     "recall": 0.643
+    }
+   ],
+   "flagged": 175,
+   "precision": 0.554,
+   "recall": 0.545
+  }
+ },
+ "not_moving_watch": {
+  "forecast": {
+   "flagged": 43,
+   "precision": 0.837,
+   "recall": 0.202
+  },
+  "not_moving": {
+   "flagged": 123,
+   "precision": 0.496,
+   "recall": 0.343
+  },
+  "either": {
+   "flagged": 141,
+   "precision": 0.546,
+   "recall": 0.433
+  }
+ },
+ "allocation": {
+  "orders_inr": 858053776.3,
+  "actual_unfilled_inr": 40111708.5,
+  "summary": {
+   "actual": {
+    "unfilled_inr": 40111708.5,
+    "top_up_inr": null,
+    "fill_rate": 0.9533
+   },
+   "current": {
+    "unfilled_inr": 24705234.6,
+    "top_up_inr": 762455019.5,
+    "fill_rate": 0.9712
+   },
+   "fy25": {
+    "unfilled_inr": 35319920.4,
+    "top_up_inr": 775739791.8,
+    "fill_rate": 0.9588
+   },
+   "old_report": {
+    "unfilled_inr": 139366966.2,
+    "top_up_inr": 291748669.3,
+    "fill_rate": 0.8376
+   }
+  },
+  "unfilled_by_cfa": {
+   "current": {
+    "CF-E01": 63189.0,
+    "CF-N01": 6275946.8,
+    "CF-N02": 11018279.3,
+    "CF-S01": 2609787.3,
+    "CF-S02": 2920778.4,
+    "CF-W01": 1817253.8
+   },
+   "fy25": {
+    "CF-E01": 0.0,
+    "CF-N01": 7517327.8,
+    "CF-N02": 21499290.6,
+    "CF-S01": 2232429.7,
+    "CF-S02": 2706076.0,
+    "CF-W01": 1364796.3
+   },
+   "old_report": {
+    "CF-E01": 5416305.2,
+    "CF-N01": 39983189.4,
+    "CF-N02": 72367742.9,
+    "CF-S01": 4263973.0,
+    "CF-S02": 2891457.9,
+    "CF-W01": 14444297.8
+   }
+  },
+  "limits": "one delivery a month (reality also had deliveries within the month), batches and shelf life are\nignored, scheme orders are left out (the client: not lasting demand). So compare the plans with each other;\n\"what actually happened\" is a reference, not a like-for-like baseline.",
+  "returns": {
+   "count": 16,
+   "value_inr": 12306229.1,
+   "short_after_return_inr": 0.0
+  },
+  "by_month": [
+   {
+    "start": "2026-03-31",
+    "month": "2026-04",
+    "plan": "actual",
+    "orders_inr": 118740897.3,
+    "unfilled_inr": 4845245.0,
+    "top_up_inr": NaN,
+    "left_over_months": NaN
+   },
+   {
+    "start": "2026-03-31",
+    "month": "2026-04",
+    "plan": "current",
+    "orders_inr": 118740897.3,
+    "unfilled_inr": 0.0,
+    "top_up_inr": 132677825.5,
+    "left_over_months": 1.22
+   },
+   {
+    "start": "2026-03-31",
+    "month": "2026-04",
+    "plan": "fy25",
+    "orders_inr": 118740897.3,
+    "unfilled_inr": 163621.4,
+    "top_up_inr": 133559155.7,
+    "left_over_months": 1.23
+   },
+   {
+    "start": "2026-03-31",
+    "month": "2026-04",
+    "plan": "old_report",
+    "orders_inr": 118740897.3,
+    "unfilled_inr": 14727719.0,
+    "top_up_inr": 53225806.1,
+    "left_over_months": 0.68
+   },
+   {
+    "start": "2026-04-30",
+    "month": "2026-05",
+    "plan": "actual",
+    "orders_inr": 167662376.0,
+    "unfilled_inr": 2539543.8,
+    "top_up_inr": NaN,
+    "left_over_months": NaN
+   },
+   {
+    "start": "2026-04-30",
+    "month": "2026-05",
+    "plan": "current",
+    "orders_inr": 167662376.0,
+    "unfilled_inr": 6420134.2,
+    "top_up_inr": 121499397.9,
+    "left_over_months": 0.47
+   },
+   {
+    "start": "2026-04-30",
+    "month": "2026-05",
+    "plan": "fy25",
+    "orders_inr": 167662376.0,
+    "unfilled_inr": 9863489.7,
+    "top_up_inr": 123754633.5,
+    "left_over_months": 0.5
+   },
+   {
+    "start": "2026-04-30",
+    "month": "2026-05",
+    "plan": "old_report",
+    "orders_inr": 167662376.0,
+    "unfilled_inr": 44897514.7,
+    "top_up_inr": 44052308.0,
+    "left_over_months": 0.23
+   },
+   {
+    "start": "2026-05-31",
+    "month": "2026-06",
+    "plan": "actual",
+    "orders_inr": 128103145.6,
+    "unfilled_inr": 4801959.6,
+    "top_up_inr": NaN,
+    "left_over_months": NaN
+   },
+   {
+    "start": "2026-05-31",
+    "month": "2026-06",
+    "plan": "current",
+    "orders_inr": 128103145.6,
+    "unfilled_inr": 0.0,
+    "top_up_inr": 129113421.0,
+    "left_over_months": 1.12
+   },
+   {
+    "start": "2026-05-31",
+    "month": "2026-06",
+    "plan": "fy25",
+    "orders_inr": 128103145.6,
+    "unfilled_inr": 472839.8,
+    "top_up_inr": 133985783.1,
+    "left_over_months": 1.16
+   },
+   {
+    "start": "2026-05-31",
+    "month": "2026-06",
+    "plan": "old_report",
+    "orders_inr": 128103145.6,
+    "unfilled_inr": 6120548.9,
+    "top_up_inr": 32106766.6,
+    "left_over_months": 0.41
+   },
+   {
+    "start": "2026-06-30",
+    "month": "2026-07",
+    "plan": "actual",
+    "orders_inr": 127738141.4,
+    "unfilled_inr": 12995729.6,
+    "top_up_inr": NaN,
+    "left_over_months": NaN
+   },
+   {
+    "start": "2026-06-30",
+    "month": "2026-07",
+    "plan": "current",
+    "orders_inr": 127738141.4,
+    "unfilled_inr": 50574.4,
+    "top_up_inr": 124729242.9,
+    "left_over_months": 1.08
+   },
+   {
+    "start": "2026-06-30",
+    "month": "2026-07",
+    "plan": "fy25",
+    "orders_inr": 127738141.4,
+    "unfilled_inr": 876163.0,
+    "top_up_inr": 125527551.5,
+    "left_over_months": 1.09
+   },
+   {
+    "start": "2026-06-30",
+    "month": "2026-07",
+    "plan": "old_report",
+    "orders_inr": 127738141.4,
+    "unfilled_inr": 14135811.5,
+    "top_up_inr": 64450012.5,
+    "left_over_months": 0.71
+   },
+   {
+    "start": "2026-07-31",
+    "month": "2026-08",
+    "plan": "actual",
+    "orders_inr": 180574735.7,
+    "unfilled_inr": 3581556.0,
+    "top_up_inr": NaN,
+    "left_over_months": NaN
+   },
+   {
+    "start": "2026-07-31",
+    "month": "2026-08",
+    "plan": "current",
+    "orders_inr": 180574735.7,
+    "unfilled_inr": 18219292.2,
+    "top_up_inr": 117649628.3,
+    "left_over_months": 0.42
+   },
+   {
+    "start": "2026-07-31",
+    "month": "2026-08",
+    "plan": "fy25",
+    "orders_inr": 180574735.7,
+    "unfilled_inr": 22678335.9,
+    "top_up_inr": 119180562.1,
+    "left_over_months": 0.45
+   },
+   {
+    "start": "2026-07-31",
+    "month": "2026-08",
+    "plan": "old_report",
+    "orders_inr": 180574735.7,
+    "unfilled_inr": 50723202.1,
+    "top_up_inr": 51389882.1,
+    "left_over_months": 0.23
+   },
+   {
+    "start": "2026-08-31",
+    "month": "2026-09",
+    "plan": "actual",
+    "orders_inr": 135234480.3,
+    "unfilled_inr": 11347674.5,
+    "top_up_inr": NaN,
+    "left_over_months": NaN
+   },
+   {
+    "start": "2026-08-31",
+    "month": "2026-09",
+    "plan": "current",
+    "orders_inr": 135234480.3,
+    "unfilled_inr": 15233.8,
+    "top_up_inr": 136785503.9,
+    "left_over_months": 1.05
+   },
+   {
+    "start": "2026-08-31",
+    "month": "2026-09",
+    "plan": "fy25",
+    "orders_inr": 135234480.3,
+    "unfilled_inr": 1265470.6,
+    "top_up_inr": 139732105.9,
+    "left_over_months": 1.08
+   },
+   {
+    "start": "2026-08-31",
+    "month": "2026-09",
+    "plan": "old_report",
+    "orders_inr": 135234480.3,
+    "unfilled_inr": 8762170.0,
+    "top_up_inr": 46523894.0,
+    "left_over_months": 0.45
+   }
+  ]
+ }
+}

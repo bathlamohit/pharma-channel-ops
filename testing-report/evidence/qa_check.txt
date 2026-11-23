@@ -1,0 +1,33 @@
+check                               independent          app   verified  result
+alloc.unfilled_h1_cr                     18.299       18.299     18.300  PASS
+alloc.unfilled_outside_cr                 3.538        3.538      3.540  PASS
+claims.credit_days_mean                  45.179       45.000         45  PASS
+claims.credit_days_median                42.000       42.000         42  PASS
+claims.pending_count                        360          360        360  PASS
+claims.pending_list_len                                  360             PASS
+claims.pending_over_30                      129          129             PASS
+claims.pending_value_L                   95.948       95.900     95.900  PASS
+claims.q1_fy27_cr                         1.414                   1.415  PASS
+cover.CF-E01                              3.310        3.310      3.310  PASS
+cover.CF-N01                              1.254        1.250             PASS
+cover.CF-N02                              0.321        0.320      0.320  PASS
+cover.CF-S01                              1.804        1.800             PASS
+cover.CF-S02                              2.233        2.230             PASS
+cover.CF-W01                              1.854        1.850             PASS
+cover.kolkata_above_3m_cr                 1.663        1.663      1.660  PASS
+cover.lucknow_zero_skus                      23                      23  PASS
+cover.national                            1.738        1.740      1.740  PASS
+cover.stock_outs_selling                     50           50             PASS
+expiry.block_batches                          0            0             PASS
+expiry.kolkata_under60_cr                 1.179        1.179      1.180  PASS
+expiry.short_dated_billing_cr             6.262        6.262      6.300  PASS
+expiry.under60_batches                       65           65             PASS
+fefo.kolkata_fy27q2_pct                  70.700       70.700     70.700  PASS
+scheme.excess_cr                          4.761        4.761      4.760  PASS
+scheme.latest_quarter_pct                 2.817        2.820      2.820  PASS
+scheme.over_cap_cr                        3.954        3.954      3.954  PASS
+scheme.quarters_over                          7            7             PASS
+scheme.rate_other_pct                     0.348        0.350      0.350  PASS
+scheme.rate_scheme_pct                    4.249        4.250      4.250  PASS
+
+30 passed, 0 failed

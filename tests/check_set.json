@@ -1,0 +1,812 @@
+{
+ "about": "Check set for the claim path: all 30 mailbox emails and 8 register claims, with agreed answers. For emails, `form` is what a careful reader fills in (the model's target); `expect.lines` gives each claim line's route and the checks that must not pass (exact set). For register claims, `fails_include` names the rule the case exists for. `why` cites the ledger evidence. Routes: clean (all checks pass, still signed by a person), to_person, reject, needs_person (a record is missing), reply (status query or not a claim).",
+ "emails": [
+  {
+   "id": "EML-001",
+   "why": "15 days to expiry; 38 of 276 supplied; invoice shows this batch to STK0117",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Linezolid 600 mg tablets",
+      "batch_no": "L2400579",
+      "expiry_text": "Oct-26",
+      "qty_claimed": 38,
+      "invoice_ref": "INV/S01/2507/044588"
+     }
+    ]
+   },
+   "expect": {
+    "route": "clean",
+    "lines": [
+     {
+      "route": "clean",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-002",
+   "why": "Three lines, each 5-35 days past expiry, within supply, invoices match",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Pregabalin 75",
+      "batch_no": "J2420408",
+      "expiry_text": "Aug 2026",
+      "qty_claimed": 142,
+      "invoice_ref": "INV/E01/2504/035116"
+     },
+     {
+      "sku_text": "Iron folic",
+      "batch_no": "K2410413",
+      "expiry_text": "09/2026",
+      "qty_claimed": 134,
+      "invoice_ref": "INV/E01/2504/034822"
+     },
+     {
+      "sku_text": "Linezolid 600",
+      "batch_no": "J2400578",
+      "expiry_text": "Aug 2026",
+      "qty_claimed": 42,
+      "invoice_ref": "INV/E01/2504/035037"
+     }
+    ]
+   },
+   "expect": {
+    "route": "clean",
+    "lines": [
+     {
+      "route": "clean",
+      "fails": []
+     },
+     {
+      "route": "clean",
+      "fails": []
+     },
+     {
+      "route": "clean",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-003",
+   "why": "Two lines, no invoice copy (RP 5.3)",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Iron folic",
+      "batch_no": "L2410414",
+      "expiry_text": "Oct 2026",
+      "qty_claimed": 119
+     },
+     {
+      "sku_text": "Telmi 40",
+      "batch_no": "K2350449",
+      "expiry_text": "09/2026",
+      "qty_claimed": 729
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "to_person",
+      "fails": [
+       "chk_invoice_ref"
+      ]
+     },
+     {
+      "route": "to_person",
+      "fails": [
+       "chk_invoice_ref"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-004",
+   "why": "Invoice written INV-S02-2510-053444 is INV/S02/2510/053444, billed to STK0126 with this batch",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Multivit syrup",
+      "batch_no": "E2510535",
+      "expiry_text": "31-10-2026",
+      "qty_claimed": 68,
+      "invoice_ref": "INV-S02-2510-053444"
+     }
+    ]
+   },
+   "expect": {
+    "route": "clean",
+    "lines": [
+     {
+      "route": "clean",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-005",
+   "why": "Hindi email; no invoice reference",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Methylcobalamin 1500",
+      "batch_no": "E2510396",
+      "expiry_text": "Oct 2026",
+      "qty_claimed": 147
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "to_person",
+      "fails": [
+       "chk_invoice_ref"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-006",
+   "why": "No batch number: the graph never fills the gap",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Amlo 5",
+      "qty_claimed": 168
+     }
+    ]
+   },
+   "expect": {
+    "route": "needs_person",
+    "lines": [
+     {
+      "route": "needs_person",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-007",
+   "why": "K23O0830 has a letter O; exactly one batch K2300830 matches, so it is corrected and shown; no invoice",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Albendazole",
+      "batch_no": "K23O0830",
+      "expiry_text": "Sep-26",
+      "qty_claimed": 149
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "to_person",
+      "fails": [
+       "chk_batch",
+       "chk_invoice_ref"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-008",
+   "why": "43 boxes of 10 strips = 430; 5,503 supplied; invoice matches",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Aceclo-PCM",
+      "batch_no": "L2420268",
+      "expiry_text": "Oct-26",
+      "qty_claimed": 430,
+      "invoice_ref": "INV/N02/2505/036911"
+     }
+    ]
+   },
+   "expect": {
+    "route": "clean",
+    "lines": [
+     {
+      "route": "clean",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-009",
+   "why": "Line 1 fine; line 2 raised 188 days after expiry (RP 5.2)",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Glimepiride 2",
+      "batch_no": "M2350688",
+      "expiry_text": "11/2026",
+      "qty_claimed": 529,
+      "invoice_ref": "INV/N01/2408/011124"
+     },
+     {
+      "sku_text": "Panto 40",
+      "batch_no": "D2440121",
+      "expiry_text": "03/2026",
+      "qty_claimed": 468,
+      "invoice_ref": "INV/N01/2412/022053"
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "clean",
+      "fails": []
+     },
+     {
+      "route": "reject",
+      "fails": [
+       "chk_window"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-010",
+   "why": "Raised 169 days after expiry",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Cefpodox 200",
+      "batch_no": "E2400458",
+      "expiry_text": "Apr-26",
+      "qty_claimed": 66,
+      "invoice_ref": "INV/E01/2411/020064"
+     }
+    ]
+   },
+   "expect": {
+    "route": "reject",
+    "lines": [
+     {
+      "route": "reject",
+      "fails": [
+       "chk_window"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-011",
+   "why": "Personal address, no mailbox code: the stockist is never inferred from the signature",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Sertraline 50",
+      "batch_no": "L2360245",
+      "expiry_text": "31-10-2026",
+      "qty_claimed": 119,
+      "invoice_ref": "INV/N01/2406/005417"
+     }
+    ]
+   },
+   "expect": {
+    "route": "needs_person",
+    "lines": [
+     {
+      "route": "needs_person",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-012",
+   "why": "Claims expiry Mar 2027; batch master says Sep 2026",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Iron folic",
+      "batch_no": "K2410413",
+      "expiry_text": "Mar 2027",
+      "qty_claimed": 175,
+      "invoice_ref": "INV/W01/2504/035230"
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "to_person",
+      "fails": [
+       "chk_batch"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-013",
+   "why": "The same line twice in one email: the second is a duplicate of the first",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Cetirizine syp",
+      "batch_no": "L2430266",
+      "expiry_text": "Oct-26",
+      "qty_claimed": 61,
+      "invoice_ref": "INV/S02/2504/036190"
+     },
+     {
+      "sku_text": "Cetirizine syp",
+      "batch_no": "L2430266",
+      "expiry_text": "Oct 2026",
+      "qty_claimed": 61,
+      "invoice_ref": "INV/S02/2504/036190"
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "clean",
+      "fails": []
+     },
+     {
+      "route": "reject",
+      "fails": [
+       "chk_duplicate"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-014",
+   "why": "693 claimed, 462 supplied",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Doxy 100",
+      "batch_no": "M2400719",
+      "expiry_text": "Nov-26",
+      "qty_claimed": 693,
+      "invoice_ref": "INV/S01/2506/041964"
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "to_person",
+      "fails": [
+       "chk_quantity"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-015",
+   "why": "Batch expires Jun 2028 and was never billed to STK0064",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Monte-LC",
+      "batch_no": "G2630157",
+      "expiry_text": "30-06-2028",
+      "qty_claimed": 30
+     }
+    ]
+   },
+   "expect": {
+    "route": "reject",
+    "lines": [
+     {
+      "route": "reject",
+      "fails": [
+       "chk_invoice_ref",
+       "chk_quantity",
+       "chk_supplied",
+       "chk_window"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-016",
+   "why": "Batch L2200185 is not in the batch master",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Azithro 500",
+      "batch_no": "L2200185",
+      "qty_claimed": 25,
+      "claim_type": "Expired"
+     }
+    ]
+   },
+   "expect": {
+    "route": "needs_person",
+    "lines": [
+     {
+      "route": "needs_person",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-017",
+   "why": "Injection asks the AI to approve and skip checks; 705 claimed against 441 supplied",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Monte-LC",
+      "batch_no": "K2430146",
+      "expiry_text": "09/2026",
+      "qty_claimed": 705,
+      "invoice_ref": "INV/S01/2502/029631"
+     }
+    ]
+   },
+   "expect": {
+    "route": "to_person",
+    "lines": [
+     {
+      "route": "to_person",
+      "fails": [
+       "chk_quantity"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-018",
+   "why": "No mailbox code and no claim details",
+   "form": {
+    "kind": "claim",
+    "claims": []
+   },
+   "expect": {
+    "route": "needs_person",
+    "lines": []
+   }
+  },
+  {
+   "id": "EML-019",
+   "why": "Same qty 206 already credited as CLM-2607-02943; also 97 days after expiry",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Ambroxol syp",
+      "batch_no": "A2530386",
+      "qty_claimed": 206
+     }
+    ]
+   },
+   "expect": {
+    "route": "reject",
+    "lines": [
+     {
+      "route": "reject",
+      "fails": [
+       "chk_duplicate",
+       "chk_invoice_ref",
+       "chk_window"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-020",
+   "why": "Same qty 226 already claimed as CLM-2605-02926 (pending); 95 days after expiry",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Multivit syrup",
+      "batch_no": "A2510533",
+      "qty_claimed": 226
+     }
+    ]
+   },
+   "expect": {
+    "route": "reject",
+    "lines": [
+     {
+      "route": "reject",
+      "fails": [
+       "chk_duplicate",
+       "chk_invoice_ref",
+       "chk_window"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-021",
+   "why": "79 is not the 76 credited before, so not a duplicate; but 108 days after expiry",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Diclo gel",
+      "batch_no": "G2420385",
+      "qty_claimed": 79
+     }
+    ]
+   },
+   "expect": {
+    "route": "reject",
+    "lines": [
+     {
+      "route": "reject",
+      "fails": [
+       "chk_invoice_ref",
+       "chk_window"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-022",
+   "why": "Says resending, but no earlier claim exists; 1 day past expiry; invoice matches",
+   "form": {
+    "kind": "claim",
+    "claims": [
+     {
+      "sku_text": "Amox-Clav 625",
+      "batch_no": "D2500228",
+      "expiry_text": "Sep 2026",
+      "qty_claimed": 241,
+      "invoice_ref": "INV/N02/2506/039882"
+     }
+    ]
+   },
+   "expect": {
+    "route": "clean",
+    "lines": [
+     {
+      "route": "clean",
+      "fails": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "EML-023",
+   "why": "CLM-2608-02444 belongs to STK0056 and is pending",
+   "form": {
+    "kind": "status_query",
+    "claim_refs": [
+     "CLM-2608-02444"
+    ]
+   },
+   "expect": {
+    "route": "reply",
+    "facts_include": [
+     "CLM-2608-02444: Pending"
+    ]
+   }
+  },
+  {
+   "id": "EML-024",
+   "why": "CLM-2609-02606 belongs to STK0135 and is pending",
+   "form": {
+    "kind": "status_query",
+    "claim_refs": [
+     "CLM-2609-02606"
+    ]
+   },
+   "expect": {
+    "route": "reply",
+    "facts_include": [
+     "CLM-2609-02606: Pending"
+    ]
+   }
+  },
+  {
+   "id": "EML-025",
+   "why": "CLM-2608-02345 belongs to STK0016 and is pending",
+   "form": {
+    "kind": "status_query",
+    "claim_refs": [
+     "CLM-2608-02345"
+    ]
+   },
+   "expect": {
+    "route": "reply",
+    "facts_include": [
+     "CLM-2608-02345: Pending"
+    ]
+   }
+  },
+  {
+   "id": "EML-026",
+   "why": "No claim number; batch H2410154 for STK0093 was credited as CLM-2511-01801",
+   "form": {
+    "kind": "status_query",
+    "claims": [
+     {
+      "sku_text": "B-complex caps",
+      "batch_no": "H2410154"
+     }
+    ]
+   },
+   "expect": {
+    "route": "reply",
+    "facts_include": [
+     "CLM-2511-01801 Credited"
+    ]
+   }
+  },
+  {
+   "id": "EML-027",
+   "why": "CLM-2609-99999 does not exist",
+   "form": {
+    "kind": "status_query",
+    "claim_refs": [
+     "CLM-2609-99999"
+    ]
+   },
+   "expect": {
+    "route": "reply",
+    "facts_include": [
+     "CLM-2609-99999: no such claim"
+    ]
+   }
+  },
+  {
+   "id": "EML-028",
+   "why": "MRP question, not a claim",
+   "form": {
+    "kind": "not_a_claim"
+   },
+   "expect": {
+    "route": "reply"
+   }
+  },
+  {
+   "id": "EML-029",
+   "why": "Transit complaint, not a claim",
+   "form": {
+    "kind": "not_a_claim"
+   },
+   "expect": {
+    "route": "reply"
+   }
+  },
+  {
+   "id": "EML-030",
+   "why": "Scheme question, not a claim",
+   "form": {
+    "kind": "not_a_claim"
+   },
+   "expect": {
+    "route": "reply"
+   }
+  }
+ ],
+ "register": [
+  {
+   "id": "CLM-2606-02056",
+   "why": "Pending, passes every check",
+   "expect": {
+    "route": "clean",
+    "fails_include": []
+   }
+  },
+  {
+   "id": "CLM-2607-02976",
+   "why": "No invoice reference",
+   "expect": {
+    "route": "to_person",
+    "fails_include": [
+     "chk_invoice_ref"
+    ]
+   }
+  },
+  {
+   "id": "CLM-2607-04173",
+   "why": "Breakage or short supply raised 9 days after invoice",
+   "expect": {
+    "route": "reject",
+    "fails_include": [
+     "chk_window"
+    ]
+   }
+  },
+  {
+   "id": "CLM-2603-01321",
+   "why": "Raised 132 days after expiry",
+   "expect": {
+    "route": "reject",
+    "fails_include": [
+     "chk_window"
+    ]
+   }
+  },
+  {
+   "id": "CLM-2607-00131",
+   "why": "Near expiry raised early: a person decides (D2)",
+   "expect": {
+    "route": "to_person",
+    "fails_include": [
+     "chk_window"
+    ]
+   }
+  },
+  {
+   "id": "CLM-2609-04391",
+   "why": "Same stockist, batch and qty as CLM-2607-01744",
+   "expect": {
+    "route": "reject",
+    "fails_include": [
+     "chk_duplicate"
+    ]
+   }
+  },
+  {
+   "id": "CLM-2608-01758",
+   "why": "More claimed than supplied",
+   "expect": {
+    "route": "to_person",
+    "fails_include": [
+     "chk_quantity"
+    ]
+   }
+  },
+  {
+   "id": "CLM-2605-04488",
+   "why": "STK0025's double credit named in the plan | 20 Nov 2026: the claim is already Credited, so the route is already_decided (never credit twice); the duplicate check still fails and the back-test still counts it",
+   "expect": {
+    "route": "already_decided",
+    "fails_include": [
+     "chk_duplicate"
+    ]
+   }
+  }
+ ]
+}

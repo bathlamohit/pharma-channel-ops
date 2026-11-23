@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+.vercel/
+.pytest_cache/
+data/audit_log.jsonl
+data/audit_log.lock
+data/claims_store.jsonl
+data/stock_actions.jsonl
+node_modules/
+frontend/node_modules/
+.DS_Store
+.claude/settings.local.json
+data/*.lock
+frontend/dist/

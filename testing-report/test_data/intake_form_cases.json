@@ -1,0 +1,580 @@
+[
+ {
+  "id": "BND-EXP-90",
+  "why": "Expired claim exactly 90 days after expiry: inside the window (5.2)",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-08-29",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 64,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "clean",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-EXP-91",
+  "why": "Expired claim 91 days after expiry: rejected under any circumstances (5.2)",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-08-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 64,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "reject",
+   "fails": [
+    "chk_window"
+   ]
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-NE-90",
+  "why": "Near-expiry claim exactly 90 days before expiry: window opens (5.2)",
+  "request": {
+   "stockist_code": "STK0038",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-01-30",
+   "lines": [
+    {
+     "batch_no": "E2420265",
+     "qty_claimed": 100,
+     "invoice_ref": "INV/N02/2412/022300"
+    }
+   ]
+  },
+  "expect": {
+   "route": "clean",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0038",
+   "batch_no": "E2420265",
+   "sku_code": "PFL1202",
+   "invoice_ref": "INV/N02/2412/022300",
+   "invoice_date": "2024-12-22",
+   "expiry": "2026-04-30",
+   "supplied_packs": 403
+  }
+ },
+ {
+  "id": "BND-NE-91",
+  "why": "Near-expiry claim 91 days before expiry: early, to a person (5.2, decision D2)",
+  "request": {
+   "stockist_code": "STK0038",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-01-29",
+   "lines": [
+    {
+     "batch_no": "E2420265",
+     "qty_claimed": 100,
+     "invoice_ref": "INV/N02/2412/022300"
+    }
+   ]
+  },
+  "expect": {
+   "route": "to_person",
+   "fails": [
+    "chk_window"
+   ]
+  },
+  "supply": {
+   "stockist_code": "STK0038",
+   "batch_no": "E2420265",
+   "sku_code": "PFL1202",
+   "invoice_ref": "INV/N02/2412/022300",
+   "invoice_date": "2024-12-22",
+   "expiry": "2026-04-30",
+   "supplied_packs": 403
+  }
+ },
+ {
+  "id": "BND-BRK-7",
+  "why": "Breakage 7 days after invoice: inside the window (5.2)",
+  "request": {
+   "stockist_code": "STK0085",
+   "entered_by": "QA Synthetic",
+   "received_date": "2025-10-18",
+   "lines": [
+    {
+     "batch_no": "A2560370",
+     "qty_claimed": 85,
+     "invoice_ref": "INV/W01/2510/052759",
+     "claim_type": "Breakage in transit"
+    }
+   ]
+  },
+  "expect": {
+   "route": "clean",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0085",
+   "batch_no": "A2560370",
+   "sku_code": "PFL1603",
+   "invoice_ref": "INV/W01/2510/052759",
+   "invoice_date": "2025-10-11",
+   "expiry": "2027-12-31",
+   "supplied_packs": 343
+  }
+ },
+ {
+  "id": "BND-BRK-8",
+  "why": "Breakage 8 days after invoice: rejected (5.2)",
+  "request": {
+   "stockist_code": "STK0085",
+   "entered_by": "QA Synthetic",
+   "received_date": "2025-10-19",
+   "lines": [
+    {
+     "batch_no": "A2560370",
+     "qty_claimed": 85,
+     "invoice_ref": "INV/W01/2510/052759",
+     "claim_type": "Breakage in transit"
+    }
+   ]
+  },
+  "expect": {
+   "route": "reject",
+   "fails": [
+    "chk_window"
+   ]
+  },
+  "supply": {
+   "stockist_code": "STK0085",
+   "batch_no": "A2560370",
+   "sku_code": "PFL1603",
+   "invoice_ref": "INV/W01/2510/052759",
+   "invoice_date": "2025-10-11",
+   "expiry": "2027-12-31",
+   "supplied_packs": 343
+  }
+ },
+ {
+  "id": "BND-SHT-8",
+  "why": "Short supply 8 days after invoice: rejected (5.2)",
+  "request": {
+   "stockist_code": "STK0085",
+   "entered_by": "QA Synthetic",
+   "received_date": "2025-10-19",
+   "lines": [
+    {
+     "batch_no": "A2560370",
+     "qty_claimed": 85,
+     "invoice_ref": "INV/W01/2510/052759",
+     "claim_type": "Short supply"
+    }
+   ]
+  },
+  "expect": {
+   "route": "reject",
+   "fails": [
+    "chk_window"
+   ]
+  },
+  "supply": {
+   "stockist_code": "STK0085",
+   "batch_no": "A2560370",
+   "sku_code": "PFL1603",
+   "invoice_ref": "INV/W01/2510/052759",
+   "invoice_date": "2025-10-11",
+   "expiry": "2027-12-31",
+   "supplied_packs": 343
+  }
+ },
+ {
+  "id": "BND-QTY-EQ",
+  "why": "Quantity equal to packs supplied (incl. free): allowed (5.5)",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 259,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "clean",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-QTY-PLUS1",
+  "why": "Quantity one over packs supplied: to a person, part credit (5.5)",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 260,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "to_person",
+   "fails": [
+    "chk_quantity"
+   ],
+   "action": "approve_part",
+   "qty": 259
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-QTY-1",
+  "why": "Smallest valid quantity: 1 pack",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 1,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "clean",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-QTY-0",
+  "why": "Zero quantity: input problem, a person looks",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 0,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "needs_person",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-QTY-NEG",
+  "why": "Negative quantity: input problem",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": -5,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "needs_person",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-QTY-FRAC",
+  "why": "Fractional quantity: input problem",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 2.5,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "needs_person",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "BND-QTY-HUGE",
+  "why": "Extremely large quantity: over supplied, to a person",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 1000000000000,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "to_person",
+   "fails": [
+    "chk_quantity"
+   ]
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "NEG-TYPE",
+  "why": "Claim type not in 5.2: input problem",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 64,
+     "invoice_ref": "INV/W01/2501/026732",
+     "claim_type": "Damaged"
+    }
+   ]
+  },
+  "expect": {
+   "route": "needs_person",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "NEG-NOBATCH",
+  "why": "Missing batch number (mandatory, 5.3)",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "",
+     "qty_claimed": 64,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "needs_person",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "NEG-NOINV",
+  "why": "No invoice reference: to a person (5.3, 5.4)",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 64,
+     "invoice_ref": null
+    }
+   ]
+  },
+  "expect": {
+   "route": "to_person",
+   "fails": [
+    "chk_invoice_ref"
+   ]
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "FMT-LOWER",
+  "why": "Lower-case batch and spaced invoice are normalised",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "f2420525",
+     "qty_claimed": 64,
+     "invoice_ref": "INV-W01-2501-026732"
+    }
+   ]
+  },
+  "expect": {
+   "route": "clean",
+   "fails": []
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ },
+ {
+  "id": "DUP-IN-FORM",
+  "why": "Same line twice in one form: the second is a duplicate (5.6)",
+  "request": {
+   "stockist_code": "STK0096",
+   "entered_by": "QA Synthetic",
+   "received_date": "2026-06-30",
+   "lines": [
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 64,
+     "invoice_ref": "INV/W01/2501/026732"
+    },
+    {
+     "batch_no": "F2420525",
+     "qty_claimed": 64,
+     "invoice_ref": "INV/W01/2501/026732"
+    }
+   ]
+  },
+  "expect": {
+   "routes": [
+    "clean",
+    "reject"
+   ]
+  },
+  "supply": {
+   "stockist_code": "STK0096",
+   "batch_no": "F2420525",
+   "sku_code": "PFL1205",
+   "invoice_ref": "INV/W01/2501/026732",
+   "invoice_date": "2025-01-26",
+   "expiry": "2026-05-31",
+   "supplied_packs": 259
+  }
+ }
+]
